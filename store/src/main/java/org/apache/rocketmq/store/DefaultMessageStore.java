@@ -611,8 +611,8 @@ public class DefaultMessageStore implements MessageStore {
                         ConsumeQueueExt.CqExtUnit cqExtUnit = new ConsumeQueueExt.CqExtUnit();
                         for (; i < bufferConsumeQueue.getSize() && i < maxFilterMessageCount; i += ConsumeQueue.CQ_STORE_UNIT_SIZE) {
                             long offsetPy = bufferConsumeQueue.getByteBuffer().getLong();
-                            int sizePy = bufferConsumeQueue.getByteBuffer().getInt();
-                            long tagsCode = bufferConsumeQueue.getByteBuffer().getLong();
+                            int sizePy = bufferConsumeQueue.getByteBuffer().getInt();//offsetPhy? 物理
+                            long tagsCode = bufferConsumeQueue.getByteBuffer().getLong();  //sizePhy? 物理
 
                             maxPhyOffsetPulling = offsetPy;
 
